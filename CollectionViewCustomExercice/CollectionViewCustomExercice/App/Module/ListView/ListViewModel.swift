@@ -7,20 +7,42 @@
 
 import Foundation
 
-protocol ListViewModelDelegate: Any {
-    
+protocol ListViewModelDelegate: AnyObject {
+    func showDetailView()
 }
 
 
-class ListViewModel: ListViewModelDelegate {
+final class ListViewModel {
     
     // MARK: - Properties
     
+    private let repository: RepositoryType
+    
+    private weak var delegate: ListViewModelDelegate?
+    
     // MARK: - Initializer
-
-    // MARK: - Outlets
-
+    
+    init(repository: RepositoryType, delegate: ListViewModelDelegate?) {
+        self.repository = repository
+        self.delegate = delegate
+    }
+    
     // MARK: - Output
-
+    
+    var buttonText: ((String) -> Void)?
+    
+    // MARK: - Input
+    
+    func viewDidLoad() {
+        buttonText?("See Detail")
+    }
+    
+    func viewWillAppear() {
+        
+    }
+    
+    func didPressDetailButton() {
+        delegate?.showDetailView()
+    }
     
 }

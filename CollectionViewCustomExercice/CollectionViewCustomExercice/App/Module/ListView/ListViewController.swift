@@ -17,7 +17,9 @@ class ListViewController: UIViewController {
     private let detailButton: CustomButton
     
     // MARK: - Properties
-
+    
+    var viewModel: ListViewModel!
+    
     // MARK: - Initializer
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -33,7 +35,7 @@ class ListViewController: UIViewController {
     }
     
     // MARK: - View life cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .orange
@@ -41,18 +43,22 @@ class ListViewController: UIViewController {
         addElementsToSubview()
         
         setElementConstraints()
+        
+        bind(to: viewModel)
+        viewModel.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        detailButton.setTitle("See Detail", for: .normal)
+        viewModel.viewWillAppear()
+        
     }
     
     // MARK: - Action
-
+    
     @objc func didPressDetailButton() {
-        print("didPressDetailButton")
+        viewModel.didPressDetailButton()
     }
     
     // MARK: - Private Functions
@@ -71,10 +77,17 @@ class ListViewController: UIViewController {
     }
     
     // MARK: - Action
-
+    
     // MARK: - Private Functions
-
-
-
+    
+    fileprivate func bind(to viewModel: ListViewModel) {
+        viewModel.buttonText = { [weak self] text in
+            self?.detailButton.setTitle(text, for: .normal)
+        }
+    }
+    
+    
+    
+    
 }
 

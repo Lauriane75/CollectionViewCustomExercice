@@ -27,6 +27,7 @@
 		5BA2C8882668133A009A8F44 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2C8872668133A009A8F44 /* Screens.swift */; };
 		5BA2C88A2668134B009A8F44 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2C8892668134B009A8F44 /* MainCoordinator.swift */; };
 		5BA2C88C26681371009A8F44 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2C88B26681371009A8F44 /* ListCoordinator.swift */; };
+		5BA2C88E266821F9009A8F44 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2C88D266821F9009A8F44 /* Context.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		5BA2C8872668133A009A8F44 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		5BA2C8892668134B009A8F44 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		5BA2C88B26681371009A8F44 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		5BA2C88D266821F9009A8F44 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,10 +153,11 @@
 			isa = PBXGroup;
 			children = (
 				5B9453A5266808C10058315A /* Info.plist */,
-				5B945394266808C00058315A /* AppDelegate.swift */,
 				5B945396266808C00058315A /* SceneDelegate.swift */,
+				5B945394266808C00058315A /* AppDelegate.swift */,
 				5B9453A0266808C10058315A /* Assets.xcassets */,
 				5B9453A2266808C10058315A /* LaunchScreen.storyboard */,
+				5BA2C88D266821F9009A8F44 /* Context.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -162,9 +165,9 @@
 		5B9453CA266809250058315A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5BA2C87A26681206009A8F44 /* Navigation */,
 				5BA2C87D2668123C009A8F44 /* Repository */,
 				5BA2C87B2668120F009A8F44 /* Network */,
-				5BA2C87A26681206009A8F44 /* Navigation */,
 				5BA2C87C26681219009A8F44 /* DataBase */,
 				5B9453CB266809290058315A /* Module */,
 			);
@@ -381,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA2C88E266821F9009A8F44 /* Context.swift in Sources */,
 				5B9453D126680A1A0058315A /* Constant.swift in Sources */,
 				5B945395266808C00058315A /* AppDelegate.swift in Sources */,
 				5BA2C88626681318009A8F44 /* HTTPEngine.swift in Sources */,

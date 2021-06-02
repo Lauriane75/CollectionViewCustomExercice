@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
     
     // MARK: - Properties
     
+    var viewModel: DetailViewModel!
+    
     // MARK: - Initializer
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -32,10 +34,10 @@ class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
     // MARK: - View life cycle
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,18 +46,23 @@ class DetailViewController: UIViewController {
         addElementsToSubview()
         
         setElementConstraints()
+        
+        bind(to: viewModel)
+        
+        viewModel.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        label.text = "This is the DetailView"
+        viewModel.viewWillAppear()
+        
     }
     
     // MARK: - Action
     
     
-
+    
     // MARK: - Private Functions
     
     private func addElementsToSubview() {
@@ -64,11 +71,17 @@ class DetailViewController: UIViewController {
     }
     
     private func setElementConstraints() {
-        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1).isActive = true
         label.widthAnchor.constraint(equalTo: view.widthAnchor, constant: 0.8).isActive = true
     }
-
+    
+    private func bind(to viewModel: DetailViewModel) {
+        viewModel.labelText = { [weak self] text in
+            self?.label.text = text
+        }
+    }
+    
     
 }
