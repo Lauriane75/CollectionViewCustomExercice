@@ -42,7 +42,50 @@ final class ListViewModel {
     }
     
     func didPressDetailButton() {
-        delegate?.showDetailView()
+//        delegate?.showDetailView()
+//        repository.getProductList { result in
+//            switch result {
+//            case .success(value: let productItem):
+//                print("productItem = \(productItem.id)")
+//            case .failure(error: let error):
+//                print("error = \(error.localizedDescription)")
+//            }
+//        } error: { _ in
+//            print("call database")
+//        }
+        
+        getProduct { result in
+            switch result {
+            case .success(let product):
+                print("product = \(product.count)")
+            case .failure(let error):
+                print("error = \(error.localizedDescription)")
+            }
+        }
+
     }
+    
+    func getProduct(completion: @escaping(Result<[Product], Error>) -> Void) {
+        
+        let urlString = "https://sephoraios.github.io/items.json"
+        
+        guard let url = URL(string: urlString) else { print("invalid URL"); return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard error == nil else { print("Error = \(String(describing: error?.localizedDescription))"); return }
+            guard data != nil else { return }
+            do {
+                let result = try JSONDecoder().decode(Product.self, from: data!)
+                completion(.success([result]))
+                print("succcess = \(result.id)")
+
+            } catch {
+                completion(.failure(error.localizedDescription as! Error))
+                print("error = \(error.localizedDescription)")
+
+            }
+        }.resume()
+    }
+    
+    
     
 }

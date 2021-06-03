@@ -7,6 +7,14 @@
 
 import Foundation
 
-class Token {
+final class Token {
+    
+    init() {}
+    
+    deinit {
+        willDealocate?()
+    }
+    
+    var willDealocate:(() -> Void)?
     
 }

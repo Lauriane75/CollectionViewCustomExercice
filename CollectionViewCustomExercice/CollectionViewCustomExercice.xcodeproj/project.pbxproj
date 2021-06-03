@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B66752D266944EA00072659 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66752C266944EA00072659 /* Product.swift */; };
 		5B945395266808C00058315A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B945394266808C00058315A /* AppDelegate.swift */; };
 		5B945397266808C00058315A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B945396266808C00058315A /* SceneDelegate.swift */; };
 		5B94539F266808C00058315A /* CollectionViewCustomExercice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B94539D266808C00058315A /* CollectionViewCustomExercice.xcdatamodeld */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B66752C266944EA00072659 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5B945391266808C00058315A /* CollectionViewCustomExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewCustomExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B945394266808C00058315A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B945396266808C00058315A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B66752B266944E000072659 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B66752C266944EA00072659 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5B945388266808C00058315A = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +187,7 @@
 		5B9453CB266809290058315A /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				5B66752B266944E000072659 /* Model */,
 				5B9453CE26680A020058315A /* CustomElements.swift */,
 				5B9453D026680A1A0058315A /* Constant.swift */,
 				5B9453CC2668092E0058315A /* ListView */,
@@ -225,8 +236,8 @@
 		5BA2C87B2668120F009A8F44 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				5BA2C881266812F8009A8F44 /* HTTPClient.swift */,
 				5BA2C88326681310009A8F44 /* Token.swift */,
+				5BA2C881266812F8009A8F44 /* HTTPClient.swift */,
 				5BA2C88526681318009A8F44 /* HTTPEngine.swift */,
 			);
 			path = Network;
@@ -395,6 +406,7 @@
 				5B945397266808C00058315A /* SceneDelegate.swift in Sources */,
 				5BA2C87726680E40009A8F44 /* ListViewController.swift in Sources */,
 				5BA2C882266812F8009A8F44 /* HTTPClient.swift in Sources */,
+				5B66752D266944EA00072659 /* Product.swift in Sources */,
 				5B94539F266808C00058315A /* CollectionViewCustomExercice.xcdatamodeld in Sources */,
 				5BA2C880266812BE009A8F44 /* Repository.swift in Sources */,
 				5BA2C8882668133A009A8F44 /* Screens.swift in Sources */,
